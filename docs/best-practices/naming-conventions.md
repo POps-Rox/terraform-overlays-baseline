@@ -128,7 +128,8 @@ module "example" {
     b = "b",
     c = "c"
   } : {}
-  source = "pops-rox/ovarlays-storage-account/azurerm"
+  source = "github.com/POps-Rox/terraform-az-overlays-storageaccount"
+  # Note: Terraform Registry publication pending; use GitHub source for now
   version = "~> 3.0.0"
   name                  = "${var.create_storage_account ? "example" : "none"}-${each.key}"
   location              = azurerm_resource_group.example.location
